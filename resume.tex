@@ -1,0 +1,255 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Michael Cooper} \\[7.5pt]
+\href{https://www.linkedin.com/in/michael-cooper-75832b147/}{\raisebox{-0.05\height}\faLinkedin\ Michael Cooper} \ $|$ \ 
+\href{mailto:macooper15@sbcglobal.net}{\raisebox{-0.05\height}\faEnvelope \ macooper15@sbcglobal.net} \ $|$ \ 
+\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ 4696471498} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+Long term cloud and development engineer, with 10+ years of experience with designing, architecting and implementing cloud native technologies. I have seen projects through from conception to completion, created training materials and worked as a lead technical interviewer and global master trainer. I am able to make success of any role whether it be technical or technology to people oriented.
+
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Cloud Operations Engineer, WideOrbit} & \hfill June 2021 - present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{•	Develop and manage the companies Terraform and Ansible environments, including writing IaC documents that are used for provisioning our customer environments.
+
+•	Manage and maintain our AWS accounts and resources for our hosted customers and SaaS solutions including delegating IAM roles and configuring AD role based authentication.
+
+•	Architect and design cloud solutions for our products to become cloud native, and work with evolving customer requirements.
+
+•	Create and utilize tools and automations to streamline customer onboarding, environment provisioning, patching, and security compliance.
+}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Cloud Engineer IV, Amazon Web Services} & \hfill Oct 2018 - June 2021 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{•	Support complex customer needs regarding infrastructure and development assistance
+
+•	Assist customers with migrating resources across cloud platforms and supporting hybrid on-prem environments utilizing VMIE, SMS, TerraForm, CloudFormation, and SystemsManager
+
+•	Troubleshoot complex cloud environment problems for large organizations
+
+•	Developed Global Training materials for organization to facilitate onboarding
+
+•	Developed tools and processes for global company use
+
+•	Utilize ECS and EKS to assist customers with containerization, converting to microservice architectures
+
+•	Utilize various technologies to facilitate IaC conversions of hybrid cloud environments for customers (Terraform, CloudFormation, AppStream, Ansible)
+
+•	Assist customers with implementation of serverless architecture and automation utilizing Lambda, Boto3, Python, and Powershell
+} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Software Development Engineer, Henry Schein One} & \hfill June 2017 - Oct 2018 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{•	Supported and developed for office management programs (Dentrix, EasyDental, Eaglesoft, Dexis etc.)
+
+•	Developed and maintained tools, internal web portals, and databases for HS TechCentral
+
+•	Developed CI/CD and Agile processes to facilitate rapid and reliable development environment
+
+•	Utilized Docker and Kubernetes to containerize and virtualize internal application environment and convert to IaC to facilitate easy deployment and transfer of applications across multiple sites
+} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Remote Support Engineer, BestBuy for Business} & \hfill Nov 2012 - June 2017 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{•	Responsible for maintenance and repair of enterprise PCs, Printers, Scanners, NAS and other devices.
+
+•	Responsible for creation and maintenance of client networks. 
+
+•	Helped create and distribute training materials.
+
+•	Responsible for unique software requirements of clients and troubleshooting of software. 
+}
+\end{tabularx}
+
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{•	Engineer Training Program (2014)}  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed employee onboarding and training program revolving around expedited training of several hundred employees.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{•	Services Leadership Development Program (2013-2014)}  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed and tested management training program, assisted in developing training materials via QA}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{•	Internal Employee Portal Management (2017-2018).}  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed for and maintained internal employee tools portal for company, developed in C\#, HTML, and JQuery with a PgSQL database.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{•	Database Management   (2018)}  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Maintained and developed for a PostGre SQL database used to store work orders, sales forms, employee lists, and tools assets. }  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{•	Lead Technical Interviewer (2019-2021)}  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Directed and organized interview for the North Americas, including conducting more than 100 interviews per year along with regular responsibilities.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{•	Global Master Trainer (2019-2021) }  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed training materials to train trainers, as well as metrics for success for mentors and training programs. }  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{•	Global Support Program Launch (2020-2021) }  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Assisted with the development and rollout strategy of global engineer Andon support program internally. }  \\
+\end{tabularx}
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2008 - 2010 & Associates (biology) at \textbf{Navarro College} 
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Operating Systems and Microsoft Techologies &  \normalsize{•	Visual Studio; Microsoft SQL Server; Microsoft Office Suite; Team Viewer; Interface Builder; LMI;  Microsoft TFS; Hyper-V; AWS (Extensive); Windows Server 2008-2022}\\
+
+Primary Coding and Scripting Languages  &  \normalsize{•	Java ; Javascript ; JQuery ; C\# ; CSS ; HTML ; PgSQL ; MSSQL; Powershell ; Python; C++}\\  
+
+AWS Technologies  &  \normalsize{•	EC2, IAM, S3, RDS, CloudFront, CloudFormation, CloudTrail, SystemsManager, VM Import/Export, Server Migration Service, Kinesis, AppStream, WorkSpaces, AWS AD, ECS, EKS, Athena, QuickSight}\\
+
+Automation and Orchestration  &  \normalsize{•	Terraform, CloudFormation, AppStream, Lambda, Azure Functions, Ansible, Git Actions}\\
+
+\end{tabularx}
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
